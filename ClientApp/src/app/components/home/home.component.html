@@ -1,0 +1,451 @@
+<div>
+  <mat-card class="full-size" layout="column" layout-align="end none">
+    <mat-card-header>
+      <mat-card-title>Взаимодействие по СМЭВ Түндүк</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group mat-align-tabs="center" backgroundColor="primary" color="accent" (selectedTabChange)="onChange()">
+        <mat-tab>
+          <ng-template mat-tab-label><h3>ГРС</h3></ng-template>
+          <div style="margin: 5px 0">
+            <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onChange()">
+              <mat-tab label="Адрес по (ПИН)" >
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <dx-text-box id="addressByPin"
+                                 placeholder="ПИН"
+                                 [formControl]="addressPin"
+                                 (onEnterKey)="search('addressPin')"
+                                 mode="text">
+                      <dxi-button id="addressPin" name="addressPin" location="after" [options]="addressSearchButton"></dxi-button>
+                    </dx-text-box>
+                    <br>
+                    <mat-accordion>
+
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                          <div class="fgroup">
+                            <div class="ftitle">Адрес</div>
+                            <div>{{ addressResult?.address }}</div>
+                          </div>
+
+                      </mat-expansion-panel>
+
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="ЗАГС по (ПИН)" >
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <dx-text-box id="zagsByPin"
+                                 placeholder="ПИН"
+                                 [formControl]="zagsPin"
+                                 (onEnterKey)="search('zagsPin')"
+                                 mode="text">
+                      <dxi-button name="zagsPin" location="after" [options]="zagsSearchButton"></dxi-button>
+                    </dx-text-box>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="fgroup">
+                          <div class="ftitle">ПИН</div>
+                          <div>{{ zagsResult?.pin }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата</div>
+                          <div>{{ zagsResult?.pinGenerationDate }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Фамилия</div>
+                          <div>{{ zagsResult?.surname }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Имя</div>
+                          <div>{{ zagsResult?.name }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Отчество</div>
+                          <div>{{ zagsResult?.patronymic }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Пол</div>
+                          <div>{{ zagsResult?.gender }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата рождения</div>
+                          <div>{{ zagsResult?.dateOfBirth }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Семейное положение</div>
+                          <div>{{ zagsResult?.maritalStatus }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Национальность</div>
+                          <div>{{ zagsResult?.nationality }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Гражданство</div>
+                          <div>{{ zagsResult?.citizenship }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата смерти</div>
+                          <div>{{ zagsResult?.deathDate }}</div>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Сведения о ПИН">
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <form [formGroup]="zags" (ngSubmit)="onSubmit('zags')">
+                      <dx-text-box placeholder="Имя"
+                                   formControlName="name"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-text-box placeholder="Фамилия"
+                                   formControlName="surname"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-text-box placeholder="Отчество"
+                                   formControlName="patronymic"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-date-box placeholder="Дата рождения"
+                                   formControlName="birthDate"
+                                  useMaskBehavior="true"
+                                  displayFormat="dd.MM.yyyy"
+                                  type="date"
+                                  pickerType="calendar"
+                                  dateSerializationFormat="yyyy-MM-ddTHH:mm:ss"
+                                  showAnalogClock="false"
+                                  showClearButton="true">
+                      </dx-date-box>
+                      <br>
+                      <button type="submit" mat-flat-button color="primary" [disabled]="!zags.valid">Поиск</button>
+                    </form>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                          <ul>
+                            <li *ngFor="let result of stringResult ">{{ result }}</li>
+                          </ul>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Паспортные данные">
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <form [formGroup]="passport" (ngSubmit)="onSubmit('passport')">
+                      <dx-text-box placeholder="ПИН"
+                                   formControlName="pin"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-text-box placeholder="Серия"
+                                   formControlName="series"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-text-box placeholder="№"
+                                   formControlName="number"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <br>
+                      <button type="submit" mat-flat-button color="primary" [disabled]="!passport.valid">Поиск</button>
+                    </form>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="fgroup">
+                          <div class="ftitle">ПИН</div>
+                          <div>{{ passportResult?.pin }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Фамилия</div>
+                          <div>{{ passportResult?.surname }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Имя</div>
+                          <div>{{ passportResult?.name }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Отчество</div>
+                          <div>{{ passportResult?.patronymic }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Национальность</div>
+                          <div>{{ passportResult?.nationality }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата рождения</div>
+                          <div>{{ passportResult?.dateOfBirth }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Пасспорт Серия</div>
+                          <div>{{ passportResult?.passportSeries }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Пасспорт №</div>
+                          <div>{{ passportResult?.passportNumber }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Кем выдан</div>
+                          <div>{{ passportResult?.passportAuthority }}</div>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Cведения об иностранных гражданах">
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <form [formGroup]="foreign" (ngSubmit)="onSubmit('foreign')">
+                      <dx-text-box placeholder="Документ"
+                                   formControlName="doc"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <dx-text-box placeholder="Код"
+                                   formControlName="code"
+                                   mode="text"
+                                   showClearButton="true"
+                                   style="margin: 10px 0">
+                      </dx-text-box>
+                      <br>
+                      <button type="submit" mat-flat-button color="primary" [disabled]="!foreign.valid">Поиск</button>
+                    </form>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="fgroup">
+                          <div class="ftitle">Фамилия</div>
+                          <div>{{ foreignResult?.message.surname }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Имя</div>
+                          <div>{{ foreignResult?.message.name }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Отчество</div>
+                          <div>{{ foreignResult?.message.patronymic }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата рождения</div>
+                          <div>{{ foreignResult?.message.birthdate }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Пол</div>
+                          <div>{{ foreignResult?.message.gender }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Гражданство</div>
+                          <div>{{ foreignResult?.message.citizenship }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата выдачи</div>
+                          <div>{{ foreignResult?.message.docDateIssue }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Срок действия</div>
+                          <div>{{ foreignResult?.message.docDateExpiration }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Адрес</div>
+                          <div>{{ foreignResult?.message.regAddress }}</div>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label><h3>Минюст</h3></ng-template>
+          <div style="margin: 5px 0">
+            <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onChange()">
+              <mat-tab label="Сведения о регистрации юридического лица по наименованию">
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <dx-text-box id="organizationByName"
+                                 placeholder="Название"
+                                 [formControl]="organizationName"
+                                 (onEnterKey)="search('organizationName')"
+                                 mode="text">
+                      <dxi-button name="organizationName" location="after" [options]="organizationNameSearchButton"></dxi-button>
+                    </dx-text-box>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div>
+                          <dx-data-grid #masterGrid
+                                        [dataSource]="dxDataSource"
+                                        [columns]="dxColumns"
+                                        stateStoring="true"
+                                        showBorders="true"
+                                        showRowLines="true"
+                                        showColumnLines="true"
+                                        allowColumnResizing="true"
+                                        allowColumnReordering="true"
+                                        columnHidingEnabled="false"
+                                        columnResizingMode="nextColumn"
+                                        columnAutoWidth="true"
+                                        wordWrapEnabled="true">
+
+                            <dxo-group-panel [visible]="true"></dxo-group-panel>
+                            <dxo-grouping [autoExpandAll]="false" [contextMenuEnabled]="true" expandMode="rowClick"></dxo-grouping>
+                            <dxo-column-chooser enabled="true" mode="select"></dxo-column-chooser>
+                            <dxo-export [enabled]="true" fileName="Отчет" [allowExportSelectedData]="true"></dxo-export>
+                            <dxo-filter-row [visible]="true"></dxo-filter-row>
+                            <dxo-selection mode="multiple"></dxo-selection>
+
+                            <dxo-paging [enabled]="true" [pageSize]="10"></dxo-paging>
+                            <dxo-pager
+                              [showPageSizeSelector]="true"
+                              [allowedPageSizes]="[5, 10, 20, 50, 100]"
+                              [showNavigationButtons]="true"
+                              [showInfo]="true" infoText="Страница {0} из {1} (Всего : {2} записей)">
+                            </dxo-pager>
+
+                          </dx-data-grid>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Сведения о юридическом лице по ИНН">
+                <mat-card class="full-size">
+                  <mat-card-content>
+                    <dx-text-box id="organizationByPin"
+                                 placeholder="ИНН"
+                                 [formControl]="organizationPin"
+                                 (onEnterKey)="search('organizationPin')"
+                                 mode="text">
+                      <dxi-button name="organizationPin" location="after" [options]="organizationPinSearchButton"></dxi-button>
+                    </dx-text-box>
+                    <br>
+                    <mat-accordion>
+                      <mat-expansion-panel hideToggle [expanded]="expanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Результаты поиска
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="fgroup">
+                          <div class="ftitle">Название на государственном языке</div>
+                          <div>{{ organizationByPinResult?.fullNameGl }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Название на официальном языке</div>
+                          <div>{{ organizationByPinResult?.fullNameOl }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">№ регистрации</div>
+                          <div>{{ organizationByPinResult?.registrCode }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">statSubCode</div>
+                          <div>{{ organizationByPinResult?.statSubCode }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">ПИН</div>
+                          <div>{{ organizationByPinResult?.tin }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Область</div>
+                          <div>{{ organizationByPinResult?.region }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Район</div>
+                          <div>{{ organizationByPinResult?.district }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Город</div>
+                          <div>{{ organizationByPinResult?.city }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Улица</div>
+                          <div>{{ organizationByPinResult?.street }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дом</div>
+                          <div>{{ organizationByPinResult?.house }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Телефон</div>
+                          <div>{{ organizationByPinResult?.phones }}</div>
+                        </div>
+                        <div class="fgroup">
+                          <div class="ftitle">Дата регистрации</div>
+                          <div>{{ organizationByPinResult?.orderDate }}</div>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<dx-load-panel
+  shadingColor="rgba(0,0,0,0.4)"
+  [(visible)]="loadingVisible"
+  [showIndicator]="true"
+  [showPane]="true"
+  [shading]="true"
+  [closeOnOutsideClick]="false">
+</dx-load-panel>

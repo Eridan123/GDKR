@@ -1,0 +1,90 @@
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\appsettings.Development.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\appsettings.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\GrsForeign\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\GrsPassport\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\GrsServiceAddress\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\GrsZags\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\MinjustService_getSubjectByName\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\MinjustService_getSubjectByTin\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Connected Services\ZAGS\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Properties\launchSettings.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.exe
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.deps.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.runtimeconfig.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.runtimeconfig.dev.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Gkdr.Consumer.pdb
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Hosting.WindowsServices.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\MySqlConnector.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Pomelo.JsonObject.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.Private.ServiceModel.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.Duplex.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.Http.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.NetTcp.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.Primitives.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceModel.Security.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\System.ServiceProcess.ServiceController.dll
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.csprojAssemblyReference.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.AssemblyInfoInputs.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.AssemblyInfo.cs
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.csproj.CoreCompileInputs.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Gkdr.Consumer.MvcApplicationPartsAssemblyInfo.cs
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Gkdr.Consumer.MvcApplicationPartsAssemblyInfo.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.RazorTargetAssemblyInfo.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.csproj.CopyComplete
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\staticwebassets\Gkdr.Consumer.StaticWebAssets.Manifest.cache
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\staticwebassets\Gkdr.Consumer.StaticWebAssets.xml
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Gkdr.Consumer.dll
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Gkdr.Consumer.pdb
+D:\projs\GKDR (1)\Consumer\obj\Release\netcoreapp3.1\Consumer.genruntimeconfig.cache
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\web.config
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\appsettings.Development.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\appsettings.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\GrsForeign\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\GrsPassport\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\GrsServiceAddress\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\GrsZags\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\MinjustService_getSubjectByName\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\MinjustService_getSubjectByTin\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Connected Services\ZAGS\ConnectedService.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Gkdr.Consumer.deps.json
+D:\projs\GKDR (1)\Consumer\bin\Release\netcoreapp3.1\www\Gkdr.Consumer.runtimeconfig.json

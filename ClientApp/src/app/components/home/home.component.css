@@ -1,0 +1,38 @@
+.full-size {
+    width: 100%;
+}
+
+.parent-tab {
+  font-weight: bold !important;
+}
+.fgroup {
+  position: relative;
+  padding: .4em;
+}
+.fgroup:after,
+.fgroup:before {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.fgroup:after {
+  clear: both;
+}
+
+.ftitle {
+  font-weight: bold;
+  float: left;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fvalue {
+  float: left;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

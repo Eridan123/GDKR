@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd" xmlns:tns="http://producer.xroad.com" targetNamespace="http://producer.xroad.com">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://x-road.eu/xsd/xroad.xsd" namespace="http://x-road.eu/xsd/xroad.xsd"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://producer.xroad.com">
+      <xsd:complexType name="fault">
+        <xsd:sequence>
+          <xsd:element name="faultCode" type="xsd:string"/>
+          <xsd:element name="faultString" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Organization">
+        <xsd:sequence>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="Licence" type="xsd:string"/>
+          <xsd:element name="RegistrationDate" type="xsd:dateTime"/>
+          <xsd:element name="Phone" type="xsd:string"/>
+          <xsd:element name="WebSite" type="xsd:string"/>
+          <xsd:element name="Email" type="xsd:string"/>
+          <xsd:element name="Forbidden" type="xsd:boolean"/>
+          <xsd:element name="District" type="xsd:string"/>
+          <xsd:element name="Region" type="xsd:string"/>
+          <xsd:element name="City" type="xsd:string"/>
+          <xsd:element name="Address" type="xsd:string"/>
+          <xsd:element name="Religion" type="xsd:string"/>
+          <xsd:element name="SubReligion" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetOrganizations">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrganizationsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="xsd:string"/>
+            <xsd:choice>
+              <xsd:element name="response">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Organization"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="fault" type="tns:fault"/>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RequiredHeaders">
+    <wsdl:part name="client" element="xrd:client"/>
+    <wsdl:part name="id" element="xrd:id"/>
+    <wsdl:part name="issue" element="xrd:issue"/>
+    <wsdl:part name="protocolVersion" element="xrd:protocolVersion"/>
+    <wsdl:part name="service" element="xrd:service"/>
+    <wsdl:part name="userId" element="xrd:userId"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrganizations">
+    <wsdl:part name="body" element="tns:GetOrganizations"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationsResponse">
+    <wsdl:part name="body" element="tns:GetOrganizationsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="PortTypeName">
+    <wsdl:operation name="GetOrganizations">
+      <wsdl:documentation>
+        <xrd:title xml:lang="ru">Поиск организации по названию</xrd:title>
+      </wsdl:documentation>
+      <wsdl:input message="tns:GetOrganizations"/>
+      <wsdl:output message="tns:GetOrganizationsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BindingName" type="tns:PortTypeName">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetOrganizations">
+      <xrd:version>v1</xrd:version>
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="client" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="id" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="issue" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="protocolVersion" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="service" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="userId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="client" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="id" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="issue" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="protocolVersion" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="service" use="literal"/>
+        <soap:header message="tns:RequiredHeaders" part="userId" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceName">
+    <wsdl:port name="PortName" binding="tns:BindingName">
+      <soap:address location="http://example.org/xroad-endpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

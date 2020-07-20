@@ -1,0 +1,29 @@
+<mat-card class="login_form">
+  <form [formGroup]="loginForm" id="loginform" (ngSubmit)="onSubmit()">
+
+  <mat-card-content>
+
+    <div class="inputs">
+
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-label>Логин</mat-label>
+        <input type="text" matInput formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>vpn_key</mat-icon>
+        <mat-label>Пароль</mat-label>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [disabled]="loading">Авторизация</button>
+  </mat-card-actions>
+  </form>
+</mat-card>
+

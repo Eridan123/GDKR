@@ -1,0 +1,37 @@
+.login_form {
+    margin: auto;
+    width: 380px;
+}
+
+.logo_image {
+    margin: auto;
+    width: 50%;
+}
+
+mat-card-title h4 {
+    text-align: center;
+}
+
+mat-card-content #loginform {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+#loginform .inputs {
+    width: 90%;
+    margin: auto;
+}
+
+#loginform mat-form-field {
+    width: 100%;
+}
+
+#loginform mat-card-actions {
+    width: 90%;
+    margin: auto;
+}
+
+#loginform mat-form-field mat-icon {
+    margin-right: 10px;
+}

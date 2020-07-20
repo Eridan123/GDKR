@@ -1,0 +1,27 @@
+<header id="main-header" *ngIf="currentUser">
+  <div class="container">
+    <div class="logo" [routerLink]="['/']">
+      <p class="logo__txt">ГОСУДАРСТВЕННАЯ КОМИССИЯ<br>ПО ДЕЛАМ РЕЛИГИЙ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</p>
+    </div>
+  </div>
+</header>
+
+<nav id="navbar" *ngIf="currentUser">
+  <div class="container">
+    <ul>
+      <li style="float: left;"><button mat-menu-item routerLink="/loglist">Действие пользователей</button></li>
+      <li style="float: right;"><button mat-button [matMenuTriggerFor]="userAction"> {{ currentUser.firstName }} {{ currentUser.lastName }} </button ></li>
+    </ul>
+
+    <mat-menu #userAction="matMenu">
+      <button mat-menu-item routerLink="/profile"><mat-icon>person</mat-icon><span>Мой профиль</span></button>
+      <button *ngIf="currentUser.isAdmin" mat-menu-item routerLink="/userlist">Пользователи</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="logout()"><mat-icon>vpn_key</mat-icon><span>Выйти</span></button>
+    </mat-menu>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

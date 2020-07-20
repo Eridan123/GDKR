@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<div [formGroup]="form">
+  <mat-dialog-content>
+    <ng-container *ngFor="let field of fields;" dynamicField [field]="field" [group]="form"></ng-container>
+  </mat-dialog-content>
+  <mat-dialog-actions [formGroup]="form">
+    <button (click)="close()" mat-button> Закрыть </button>
+    <button *ngIf="canEdit" (click)="submit()" mat-button [disabled]="this.form.invalid || disabled"><span class="material-icons">save</span> Сохранить </button>
+  </mat-dialog-actions>
+</div>
